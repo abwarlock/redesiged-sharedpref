@@ -44,7 +44,7 @@ class GlobalData private constructor(private var context: ContextInterface) {
         context.getContext().getSharedPreferences("LocalData", Context.MODE_PRIVATE)
 
     private fun putValue(key: String, value: String) {
-        val sharedPreferences = getSharedPref().edit().apply {
+        getSharedPref().edit().apply {
             if (!TextUtils.isEmpty(value)) {
                 putString(key, value).apply()
             }
